@@ -32,11 +32,11 @@
     <!-- 右侧 社交图标 -->
     <div class="flex items-center">
       <!-- 夜间模式 -->
-      <ColorMode />
+      <!-- <ColorMode /> -->
       <!-- github -->
-      <SocialIcon url="https://github.com/baiwumm/dream-site" tip="Github" icon="i-simple-icons-github" />
+      <!-- <SocialIcon url="https://github.com/baiwumm/dream-site" tip="Github" icon="i-simple-icons-github" /> -->
       <!-- 登录用户头像 -->
-      <user-avatar />
+      <!-- <user-avatar /> -->
       <!-- 跳转管理界面 -->
       <JumpAdmin />
       <!-- 注销用户按钮 -->
@@ -44,9 +44,9 @@
     </div>
   </header>
 </template>
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 const colorMode = useColorMode();
 
 // 判断是否暗色模式
 const isDark = colorMode.preference === "dark";
-</script>
+</script> -->

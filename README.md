@@ -33,7 +33,7 @@
 
 ```powershell
 // 克隆项目
-git clone https://github.com/baiwumm/dream-site.git
+git clone https://github.com/sky984-11/nav-light.git
 
 // 安装依赖
 pnpm install
@@ -73,6 +73,3 @@ vercel --prod
 ◻️ 优化 `UI` 展示
 ...
 
-## ⭐ Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=baiwumm/dream-site&type=Date)](https://star-history.com/#baiwumm/dream-site&Date)
