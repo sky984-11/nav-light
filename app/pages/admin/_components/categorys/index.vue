@@ -246,9 +246,16 @@ const columns: TableColumn<CategoryList>[] = [
         th: "text-center",
       },
     },
-    cell: ({ row }) => {
-      return h(UIcon, { name: row.getValue("icon"), size: "30" }, () => row.getValue("icon"));
-    },
+  cell: ({ row }) => {
+    const iconValue = row.getValue("icon");
+    // 增加对空值和非字符串值的检查
+    if (!iconValue || typeof iconValue !== 'string' || iconValue.length === 0) {
+      return h('div', { class: 'w-6 h-6 flex items-center justify-center' }, 
+        h('span', { class: 'text-gray-400 text-xs' }, '无图标')
+      );
+    }
+    return h(UIcon, { name: iconValue, size: "30" }, () => iconValue);
+  },
   },
   {
     accessorKey: "sort",
