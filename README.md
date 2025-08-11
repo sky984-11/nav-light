@@ -42,6 +42,14 @@ pnpm install
 pnpm dev
 ```
 
+## 📝 初始化数据库
+1. 进入 supabase 控制台，创建项目，并获取SUPABASE_URL和SUPABASE_KEY
+2. 导入数据库结构，将 initSupabase.sql 导入到 Supabase SQL 编辑器中执行。
+3. 在根目录下创建.env文件，并添加以下内容：
+    SUPABASE_URL="xxx"
+    SUPABASE_KEY="xxx"
+4. 进入 Authentication ，自行配置 Policies 和 Sign In / Providers
+
 ## ⚙️ Vercel 一键部署
 1. `Fork` 本项目，在 `Vercel` 官网点击 `New Project`
 2. 点击 `Import Git Repository` 并选择你 fork 的此项目并点击 `import`
