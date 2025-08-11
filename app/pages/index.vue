@@ -131,6 +131,6 @@ const handleClick = async (record: WebsiteList) => {
 };
 
 definePageMeta({
-  title: "一个精美的个人站点导航！",
+  title: "在互联网知识的海洋中，为您点亮航灯",
 });
 </script>

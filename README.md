@@ -1,7 +1,7 @@
 <div align="center">
 <img alt="logo" src="./public/logo.svg" width="80"/>
 <h2>Dream Site</h2>
-<p>一个精美的个人站点导航</p>
+<p>在互联网知识的海洋中，为您点亮航灯</p>
 </div>
 
 ## 🪴 项目信息
@@ -66,5 +66,8 @@ pnpm dev
 ◻️ 添加全局资源搜索框
 ◻️ 支持更多登录方式
 ◻️ 优化 `UI` 展示
+◻️ 图标优化
+◻️ 标签改进
 ...
+
 
