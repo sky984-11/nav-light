@@ -59,20 +59,7 @@ pnpm dev
 <img alt="vercel 部署" src="./app/assets/images/vercel.svg" />
 </a>
 
-## ⚙️ Vecel 本地部署
-```powershell
-// 全局安装 vercel
-npm i -g vercel
 
-// 登录
-vercel login
-
-// 项目推送
-vercel
-
-// 挂载生产
-vercel --prod
-```
 
 ## ✅ TODO
 ◻️ 首页添加每日一图 `Banner`
