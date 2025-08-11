@@ -152,11 +152,17 @@ const handleSearch = () => {
   refresh();
 };
 
+// 编辑模态框状态
+const showEditModal = ref(false);
+const currentWebsite = ref<WebsiteEdit | null>();
+
 // 重置回调
 const handleReset = () => {
   current.value = 1;
   name.value = "";
   category_id.value = "";
+  deleteId.value = "";
+  currentWebsite.value = null;
 };
 
 // 分页切换回调
@@ -164,13 +170,9 @@ const handlePageChange = (page: number) => {
   current.value = page;
 };
 
-// 编辑模态框状态
-const showEditModal = ref(false);
-const currentWebsite = ref<WebsiteEdit | undefined>();
-
 // 新增回调
 const handleAdd = () => {
-  currentWebsite.value = undefined;
+  currentWebsite.value = null;
   showEditModal.value = true;
 };
 
@@ -232,6 +234,7 @@ const handleDelete = async (id: string) => {
 
 // 操作成功回调
 const handleSuccess = () => {
+  handleReset();
   refresh();
 };
 
@@ -375,7 +378,9 @@ const columns: TableColumn<WebsiteList>[] = [
     },
     cell: ({ row }) => {
       const pinned = row.original.pinned;
-      return h(UCheckbox, { disabled: true, defaultValue: pinned || "indeterminate" });
+      return h("div", { class: "flex justify-center" }, [
+        h(UCheckbox, { disabled: true, defaultValue: pinned || "indeterminate" }),
+      ]);
     },
   },
   {
@@ -389,7 +394,9 @@ const columns: TableColumn<WebsiteList>[] = [
     },
     cell: ({ row }) => {
       const vpn = row.original.vpn;
-      return h(UCheckbox, { disabled: true, defaultValue: vpn || "indeterminate" });
+      return h("div", { class: "flex justify-center" }, [
+        h(UCheckbox, { disabled: true, defaultValue: vpn || "indeterminate" }),
+      ]);
     },
   },
   {
@@ -403,7 +410,9 @@ const columns: TableColumn<WebsiteList>[] = [
     },
     cell: ({ row }) => {
       const recommend = row.original.recommend;
-      return h(UCheckbox, { disabled: true, defaultValue: recommend || "indeterminate" });
+      return h("div", { class: "flex justify-center" }, [
+        h(UCheckbox, { disabled: true, defaultValue: recommend || "indeterminate" }),
+      ]);
     },
   },
   {
@@ -417,7 +426,9 @@ const columns: TableColumn<WebsiteList>[] = [
     },
     cell: ({ row }) => {
       const commonlyUsed = row.original.commonlyUsed;
-      return h(UCheckbox, { disabled: true, defaultValue: commonlyUsed || "indeterminate" });
+      return h("div", { class: "flex justify-center" }, [
+        h(UCheckbox, { disabled: true, defaultValue: commonlyUsed || "indeterminate" }),
+      ]);
     },
   },
   {

@@ -54,7 +54,7 @@
           />
         </UFormField>
 
-        <div class="grid grid-cols-4">
+        <div class="grid grid-cols-4 place-items-center">
           <UFormField label="置顶" name="pinned">
             <USwitch unchecked-icon="i-lucide-x" checked-icon="i-lucide-check" v-model="state.pinned" />
           </UFormField>
@@ -121,7 +121,7 @@ import type { FormSubmitEvent } from "@nuxt/ui";
 
 const props = defineProps<{
   modelValue: boolean;
-  website?: WebsiteEdit;
+  website?: WebsiteEdit | null;
   categoryList?: CategoryList[];
 }>();
 
@@ -163,6 +163,7 @@ type Schema = z.output<typeof schema>;
 
 // 定义一个默认值的函数
 const getDefaultState = (): Partial<Schema> => ({
+  id: undefined,
   category_id: undefined,
   name: undefined,
   url: undefined,
@@ -205,7 +206,7 @@ watch(
       resetForm();
     }
   },
-  { immediate: true }
+  { immediate: true, deep: true }
 );
 
 // 关闭模态框
