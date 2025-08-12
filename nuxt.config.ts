@@ -12,6 +12,15 @@ export default defineNuxtConfig({
   },
   app: {
     pageTransition: { name: 'blur', mode: 'out-in' }, // 页面过渡效果
+    head: {
+      script: [
+        {
+          src: 'https://cloud.umami.is/script.js',
+          defer: true,
+          'data-website-id': '4f4911f1-c733-4c59-bfa3-10b9d43689d1'
+        }
+      ]
+    }
   },
   modules: [
     '@nuxt/eslint',
@@ -36,19 +45,19 @@ export default defineNuxtConfig({
     }
   },
   // nuxt-umami Umami 统计
-  umami: {
-    id: '4eb40830-3733-4175-8a7b-e8991c5329a8',
-    host: 'https://umami.baiwumm.com',
-    autoTrack: true
-  },
+  // umami: {
+  //   id: '4eb40830-3733-4175-8a7b-e8991c5329a8',
+  //   host: 'https://umami.baiwumm.com',
+  //   autoTrack: true
+  // },
   // nuxt-gtag 谷歌统计
-  gtag: {
-    enabled: process.env.NODE_ENV === 'production',
-    id: 'G-76RP7KMHMQ',
-    config: {
-      page_title: process.env.NUXT_SITE_NAME
-    },
-  },
+  // gtag: {
+  //   enabled: process.env.NODE_ENV === 'production',
+  //   id: 'G-76RP7KMHMQ',
+  //   config: {
+  //     page_title: process.env.NUXT_SITE_NAME
+  //   },
+  // },
   // dayjs 插件
   dayjs: {
     locales: ['zh-cn'],
